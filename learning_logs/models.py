@@ -12,9 +12,10 @@ class Topic(models.Model):
         '''String representation of the model'''
         return self.text
 
-class Entries(models.Model):
+class Entry(models.Model):
     '''From the Topics youve learned you add entries about'''
     topic = models.ForeignKey(Topic, on_delete=models.CASCADE)
+    title= models.TextField()
     knew_before = models.TextField()
     know_now = models.TextField()
     ties_in = models.TextField()
@@ -27,4 +28,4 @@ class Entries(models.Model):
         verbose_name_plural = 'entries'
     def __str__(self):
         """Return a string representation of the model."""
-        return self.text[:50] + "..."
+        return self.title[:30] + "..."
