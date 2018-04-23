@@ -4,7 +4,10 @@
   <title>Learning Logs!</title>
 </head>
 <body>
-
+  <p>
+   <a href="{% url 'index' %}">Learning Log</a> -
+   <a href="{% url 'topics' %}">Topics</a>
+  </p>
   {% block content %}{% endblock content %}
 </br>
 </br>
